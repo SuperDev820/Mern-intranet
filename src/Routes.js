@@ -10,6 +10,9 @@ import {
   default as SignUpView
 } from './views/Auth/SignUp/SignUp';
 
+import {
+  default as Home
+} from './views/Home/Home'
 // import {
 //   Dashboard as DashboardView,
 //   Groups as GroupsView,
@@ -23,6 +26,9 @@ const Routes = () => {
       <Route component={SignInView} path="/login" />
       <Route exact path="/">
         <SignInView />
+      </Route>
+      <Route exact path="/dashboard">
+        <Home />
       </Route>
     </Switch>
   );
