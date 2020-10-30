@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import * as actions from '../../../redux/actions/index'
+import * as actions from '../../../redux/actions/index.js'
 import axios from 'axios'
 
 function Copyright() {
@@ -61,8 +61,9 @@ export default function SignUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         let user = {name, email, password};
-        // actions.register(user);
-        axios.post('http://localhost:5000/register', {user: user})
+        console.log(actions)
+        actions.register(user);
+        // axios.post('http://localhost:5000/register', {user: user})
     }
     return (
         <Container component="main" maxWidth="xs">
