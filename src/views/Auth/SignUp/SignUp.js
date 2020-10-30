@@ -13,8 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import * as actions from '../../../redux/actions/index.js'
-import axios from 'axios'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import { register }from '../../../redux/actions'
+// import axios from 'axios'
 
 function Copyright() {
   return (
@@ -50,8 +52,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
-export default function SignUp() {
+const SignUp = (props) => {
   const classes = useStyles();
 
   const [name, setName] = useState("");
@@ -61,8 +62,7 @@ export default function SignUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         let user = {name, email, password};
-        console.log(actions)
-        actions.register(user);
+        props.register(user);
         // axios.post('http://localhost:5000/register', {user: user})
     }
     return (
@@ -132,7 +132,7 @@ export default function SignUp() {
                 <Grid item xs={12}>
                 <FormControlLabel
                     control={<Checkbox value="allowExtraEmails" color="primary" />}
-                    label="I want to receive inspiration, marketing promotions and updates via email."
+                    label="Remember me."
                 />
                 </Grid>
             </Grid>
@@ -161,3 +161,12 @@ export default function SignUp() {
   );
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({ register }, dispatch)
+}
+  
+  // component receives props.increment, props.decrement, props.reset
+export default connect(
+    null,
+    mapDispatchToProps
+)(SignUp)
