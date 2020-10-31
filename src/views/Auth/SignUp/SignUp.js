@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
 import * as actions from '../../../redux/actions/index'
 import axios from 'axios'
 
