@@ -1,6 +1,6 @@
 import * as types from "../../actions/types";
 
-const initialAuth = { name: '', email: ''};
+const initialAuth = { name: '', email: '', authenticated: false};
 
 const authReducer = (state = initialAuth, action) => {
   switch (action.type) {
@@ -8,6 +8,11 @@ const authReducer = (state = initialAuth, action) => {
     //     return state;
     //     break;
     case types.SAVE_AUTH:
+        let auth = state;
+        auth.name = action.payload.name;
+        auth.email = action.payload.email;
+        auth.authenticated = true;
+
         return action.payload;
         break;
 
