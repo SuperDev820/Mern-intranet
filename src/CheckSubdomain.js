@@ -6,7 +6,7 @@ import { checkSubdomain } from './redux/actions'
 
 
 
-const Wrapper = ({ location, subdomain, checkSubdomain, children }) => {
+const Wrapper = ({ subdomain, checkSubdomain, children }) => {
 
     const [ isRegister, setIsRegister ] = useState(null);
 
