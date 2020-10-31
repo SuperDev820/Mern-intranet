@@ -6,7 +6,7 @@ import { withRouter, Redirect } from 'react-router-dom'
 const Wrapper = ({ location, auth, children }) => {
     console.log(auth)
     if (!auth.authenticated) {
-        if(location.pathname != '/login')
+        if(location.pathname != '/login' && location.pathname != '/register')
             return <Redirect to="/login" />
     } else {
         if (location && (location.pathname === '/') || location.pathname === '/login') {
