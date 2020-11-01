@@ -51,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   
+  const handleSubmit = e => {
+    e.preventDefault();
+    
+  }
   const classes = useStyles();
   return (
     <Container component="main" maxWidth="xs">
@@ -62,7 +66,8 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} Validate>
+
+        <form className={classes.form} Validate onSubmit = {handleSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -70,7 +75,6 @@ export default function SignIn() {
             fullWidth
             id="email"
             label="Email Address"
-            type="email"
             name="email"
             autoComplete="email"
             autoFocus
