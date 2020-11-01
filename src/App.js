@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router } from 'react-router-dom';
 // import history from './history';
 
-import RequireAuth from './RequireAuth'
+// import RequireAuth from './RequireAuth'
 import CheckSubdomain from './CheckSubdomain'
 import Routes from './Routes';
 

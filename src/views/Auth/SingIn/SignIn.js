@@ -12,9 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux';
+import GoogleLink from '../../../components/GoogleLink'
 
 function Copyright() {
   return (
@@ -117,6 +115,7 @@ export default function SignIn() {
           </Grid>
         </form>
       </div>
+      <GoogleLink />
       <Box mt={8}>
         <Copyright />
       </Box>

@@ -9,15 +9,11 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import RedoIcon from '@material-ui/icons/Redo';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+import GoogleLink from '../../../components/GoogleLink'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { register }from '../../../redux/actions'
@@ -160,13 +156,7 @@ const SignUp = (props) => {
             </Grid>
             </form>
         </div>
-        <Box mt={3}>
-          <RedoIcon style={{color: '#4d5792'}} fontSize="large" />
-          <FacebookIcon style={{color: '#4d5792'}} fontSize="large" />
-          <TwitterIcon style={{color: '#5bced4'}} fontSize="large" />
-          <LinkedInIcon style={{color: '#1579c1'}} fontSize="large" />
-          <AttachMoneyIcon style={{color: '#50a576'}} fontSize="large" />
-        </Box>
+        <GoogleLink />
         <Box mt={5}>
             <Copyright />
         </Box>
@@ -183,3 +173,4 @@ export default connect(
     null,
     mapDispatchToProps
 )(SignUp)
+
