@@ -14,6 +14,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import GoogleLink from '../../../components/GoogleLink'
 
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
 import { login }from '../../../redux/actions'
 
 function Copyright() {
