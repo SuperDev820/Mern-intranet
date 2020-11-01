@@ -1,7 +1,18 @@
-import { combineReducers } from "redux"
-import auth  from "./authReducer"
+import { SAVE_AUTH } from "../../actions/types";
 
-export default combineReducers({
-    auth: auth
-})
+const initialAuth = { name: '', email: '', authenticated: false};
 
+const authReducer = (state = initialAuth, action) => {
+  switch (action.type) {
+    case SAVE_AUTH:
+        return {
+            ...state, 
+            authenticated: true
+        }
+
+    default:
+        return state;
+  }
+};
+
+export default authReducer;

@@ -16,7 +16,7 @@ import Container from '@material-ui/core/Container';
 import GoogleLink from '../../../components/GoogleLink'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import { register }from '../../../redux/actions'
+import { register } from '../../../redux/actions'
 // import axios from 'axios'
 
 function Copyright() {

@@ -1,9 +1,9 @@
 import * as types from "./types";
 import axios from 'axios'
-
+import { server_url } from '../../constants'
 
 export const login = ( user) => {
-    return dispatch => axios.post('localhost:5000/login', {user: user})
+    return (dispatch) => axios.post(server_url+'/login', {user: user})
         .then(response => {
             if(response.status === 200)
                 dispatch({type: types.SAVE_AUTH, payload: response.data.user});

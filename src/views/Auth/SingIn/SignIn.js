@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import GoogleLink from '../../../components/GoogleLink'
+
+import { login }from '../../../redux/actions'
 
 function Copyright() {
   return (
@@ -47,11 +49,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+function SignIn(props) {
   
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleSubmit = e => {
     e.preventDefault();
-    
+    let user = { email, password }
+    console.log(user);
+    props.login(user);
+
   }
   const classes = useStyles();
   return (
@@ -76,6 +84,8 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={email}
+            onChange={ e => setEmail(e.target.value) }
           />
           <TextField
             variant="outlined"
@@ -87,6 +97,8 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={ e => setPassword(e.target.value) }
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -122,3 +134,13 @@ export default function SignIn() {
     </Container>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ login }, dispatch)
+}
+
+// component receives props.increment, props.decrement, props.reset
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignIn)
