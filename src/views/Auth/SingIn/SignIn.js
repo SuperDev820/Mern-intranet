@@ -71,11 +71,11 @@ function SignIn(props) {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography variant="h5"  component="h1" >
           Sign in
         </Typography>
 
-        <form className={classes.form} Validate onSubmit = {handleSubmit}>
+        <form className={classes.form} validate="true" onSubmit = {handleSubmit}>
           <TextField
             variant="outlined"
             margin="normal"

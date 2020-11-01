@@ -15,6 +15,7 @@ const Wrapper = ({ subdomain, checkSubdomain, children }) => {
         let hostname = window.location.host;
         let pathname = window.location.pathname;
         let isRegister = (hostname === 'localhost:3000' && pathname==='/register')
+        alert(pathname);
         let subdomainFromUrl = hostname.split('.')[0];
         if (isRegister) {
             setIsRegister(true);

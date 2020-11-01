@@ -37,7 +37,7 @@ export default function GoogleLink() {
     <Box mt={5}>
         <Grid container direction="column" spacing={2}>
             <Grid item xs={12}>
-                <Typography variant="subtitle" style={{color: 'black',fontSize: '17px'}}>
+                <Typography variant="subtitle1" style={{color: 'black',fontSize: '17px'}}>
                     Social logins
                 </Typography>
             </Grid>
