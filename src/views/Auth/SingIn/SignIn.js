@@ -62,7 +62,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} Validate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -70,6 +70,7 @@ export default function SignIn() {
             fullWidth
             id="email"
             label="Email Address"
+            type="email"
             name="email"
             autoComplete="email"
             autoFocus
