@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import LoadingView from './components/Loading'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 // import { withRouter } from 'react-router-dom'
@@ -15,7 +16,7 @@ const Wrapper = ({ subdomain, checkSubdomain, children }) => {
         let hostname = window.location.host;
         let pathname = window.location.pathname;
         let isRegister = (hostname === 'localhost:3000' && (pathname==='/register' ||pathname==='register'))
-        alert(pathname);
+        // alert(pathname);
         let subdomainFromUrl = hostname.split('.')[0];
         if (isRegister) {
             setIsRegister(true);
@@ -33,7 +34,9 @@ const Wrapper = ({ subdomain, checkSubdomain, children }) => {
     } else if( isRegister === false) {
         if (subdomain.isAvailableSubdomain === null) {
             return (
-                <div>Load</div>
+                <div>
+                    <LoadingView />
+                </div>
             )
         } else if ( subdomain.isAvailableSubdomain ) {
             return (<React.Fragment>
@@ -46,7 +49,9 @@ const Wrapper = ({ subdomain, checkSubdomain, children }) => {
         }
     } else {
         return (
-            <div>Load</div>
+            <div>
+                <LoadingView />
+            </div>
         )
     }
 }
