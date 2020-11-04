@@ -13,11 +13,6 @@ import {
 import {
   default as Home
 } from './views/Home/Home'
-// import {
-//   Dashboard as DashboardView,
-//   Groups as GroupsView,
-//   JoinGroup as JoinGroupView
-// } from './views/main';
 
 const Routes = () => {
   return (
@@ -27,7 +22,7 @@ const Routes = () => {
       <Route exact path="/">
         <SignInView />
       </Route>
-      <Route exact path="/dashboard">
+      <Route path="/dashboard">
         <Home />
       </Route>
     </Switch>
